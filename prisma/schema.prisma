@@ -1,0 +1,21 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../data/data.sqlite3"
+}
+
+model CardData {
+  id Int @id @default(autoincrement())
+  cardNumber Int    
+  expirationDate String?
+  CVV Int?
+  amount Int?
+  requestId String
+}
+

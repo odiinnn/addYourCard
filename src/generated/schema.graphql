@@ -3,11 +3,17 @@ schema {
   mutation: Mutation
 }
 
+type AddCardCreditsresult {
+  amount: Int!
+  requestId: String!
+}
+
 scalar Date
 
 scalar Json
 
 type Mutation {
+  addCardCredits(CVV: Int!, amount: Int!, cardNumber: Float!, expirationDate: String!): AddCardCreditsresult!
   echo(text: String!): String!
 }
 

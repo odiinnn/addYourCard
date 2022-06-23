@@ -1,0 +1,13 @@
+.card_body {
+    width: 30vw;
+    height: 18vw;
+    border: 2px solid green;
+    border-radius: 45px;
+}
+
+.cvv_input {
+    right: '0';
+    bottom: '0';
+    margin: '2vw';
+    position: 'absolute'
+}

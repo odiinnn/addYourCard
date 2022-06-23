@@ -18,9 +18,24 @@ export type Scalars = {
   Json: any;
 };
 
+export type AddCardCreditsresult = {
+  __typename?: 'AddCardCreditsresult';
+  amount: Scalars['Int'];
+  requestId: Scalars['String'];
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
+  addCardCredits: AddCardCreditsresult;
   echo: Scalars['String'];
+};
+
+
+export type MutationAddCardCreditsArgs = {
+  CVV: Scalars['Int'];
+  amount: Scalars['Int'];
+  cardNumber: Scalars['Float'];
+  expirationDate: Scalars['String'];
 };
 
 
@@ -44,6 +59,16 @@ export type EchoMutationVariables = Exact<{
 
 
 export type EchoMutation = { __typename?: 'Mutation', echo: string };
+
+export type AddCardCreditsMutationVariables = Exact<{
+  cardNumber: Scalars['Float'];
+  expirationDate: Scalars['String'];
+  CVV: Scalars['Int'];
+  amount: Scalars['Int'];
+}>;
+
+
+export type AddCardCreditsMutation = { __typename?: 'Mutation', addCardCredits: { __typename?: 'AddCardCreditsresult', requestId: string, amount: number } };
 
 
 export const DebugDocument = gql`
@@ -109,3 +134,45 @@ export function useEchoMutation(baseOptions?: Apollo.MutationHookOptions<EchoMut
 export type EchoMutationHookResult = ReturnType<typeof useEchoMutation>;
 export type EchoMutationResult = Apollo.MutationResult<EchoMutation>;
 export type EchoMutationOptions = Apollo.BaseMutationOptions<EchoMutation, EchoMutationVariables>;
+export const AddCardCreditsDocument = gql`
+    mutation AddCardCredits($cardNumber: Float!, $expirationDate: String!, $CVV: Int!, $amount: Int!) {
+  addCardCredits(
+    cardNumber: $cardNumber
+    expirationDate: $expirationDate
+    CVV: $CVV
+    amount: $amount
+  ) {
+    requestId
+    amount
+  }
+}
+    `;
+export type AddCardCreditsMutationFn = Apollo.MutationFunction<AddCardCreditsMutation, AddCardCreditsMutationVariables>;
+
+/**
+ * __useAddCardCreditsMutation__
+ *
+ * To run a mutation, you first call `useAddCardCreditsMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddCardCreditsMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addCardCreditsMutation, { data, loading, error }] = useAddCardCreditsMutation({
+ *   variables: {
+ *      cardNumber: // value for 'cardNumber'
+ *      expirationDate: // value for 'expirationDate'
+ *      CVV: // value for 'CVV'
+ *      amount: // value for 'amount'
+ *   },
+ * });
+ */
+export function useAddCardCreditsMutation(baseOptions?: Apollo.MutationHookOptions<AddCardCreditsMutation, AddCardCreditsMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useMutation<AddCardCreditsMutation, AddCardCreditsMutationVariables>(AddCardCreditsDocument, options);
+      }
+export type AddCardCreditsMutationHookResult = ReturnType<typeof useAddCardCreditsMutation>;
+export type AddCardCreditsMutationResult = Apollo.MutationResult<AddCardCreditsMutation>;
+export type AddCardCreditsMutationOptions = Apollo.BaseMutationOptions<AddCardCreditsMutation, AddCardCreditsMutationVariables>;

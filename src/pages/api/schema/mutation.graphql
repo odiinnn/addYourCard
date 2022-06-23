@@ -1,3 +1,9 @@
 type Mutation {
     echo(text: String!): String!
+    addCardCredits(cardNumber: Float!, expirationDate: String!, CVV: Int!, amount: Int!): AddCardCreditsresult!
+}
+
+type AddCardCreditsresult {
+    requestId: String!,
+    amount: Int!
 }

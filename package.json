@@ -4,8 +4,8 @@
     "license": "MIT",
     "scripts": {
         "dev": "next",
-        "build": "NODE_ENV=production next build",
-        "start": "NODE_ENV=production next start -p 7171",
+        "build": "next build",
+        "start": "next start -p 7171",
         "ts:check": "tsc --noEmit",
         "check": "npm run ts:check && npm run lint",
         "lint": "./node_modules/.bin/eslint . --fix",
@@ -14,11 +14,14 @@
     },
     "dependencies": {
         "@apollo/client": "^3.5.10",
+        "@prisma/client": "^3.15.2",
         "apollo-server-micro": "^3.6.7",
         "apollo3-cache-persist": "^0.14.0",
         "dotenv": "^16.0.0",
         "graphql": "^16.3.0",
+        "graphql-type-long": "^0.1.1",
         "micro": "^9.3.4",
+        "nanoid": "^4.0.0",
         "next": "latest",
         "next-compose-plugins": "^2.2.1",
         "react": "^18.0.0",
@@ -33,7 +36,7 @@
         "@graphql-codegen/typescript-operations": "2.3.5",
         "@graphql-codegen/typescript-react-apollo": "3.2.11",
         "@jetbrains/eslint-config": "^5.3.2",
-        "@types/node": "^17.0.25",
+        "@types/node": "^17.0.45",
         "@types/react": "^18.0.6",
         "@types/react-dom": "^18.0.2",
         "@typescript-eslint/eslint-plugin": "^5.20.0",
@@ -43,7 +46,9 @@
         "eslint-plugin-react": "^7.29.4",
         "eslint-plugin-sonarjs": "^0.13.0",
         "npm-check-updates": "^12.5.9",
+        "prisma": "^3.15.2",
         "sass": "^1.50.1",
-        "typescript": "4.6"
+        "ts-node": "^10.8.1",
+        "typescript": "^4.6.4"
     }
 }

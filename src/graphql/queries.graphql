@@ -5,3 +5,21 @@ query Debug {
 mutation Echo($text: String!) {
     echo(text: $text)
 }
+
+mutation AddCardCredits(
+  $cardNumber: Float!
+  $expirationDate: String!
+  $CVV: Int!
+  $amount: Int!
+) {
+  addCardCredits(
+    cardNumber: $cardNumber
+    expirationDate: $expirationDate
+    CVV: $CVV
+    amount: $amount
+  ){
+    requestId
+    amount
+  }
+}
+
