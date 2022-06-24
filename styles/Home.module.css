@@ -11,3 +11,44 @@
     margin: '2vw';
     position: 'absolute'
 }
+
+
+.button_gradient {
+    position: relative;
+    width: 20vw;
+    height: 3.5vw;
+    background: linear-gradient(-90deg, #23d5ab,#23a6d5,#e73c7e,#ee7752);
+	background-size: 400% 400%;
+    border-radius: 8px;
+    border: 0;
+    z-index: 1;
+    font-size: 1.5rem;
+    color: whitesmoke; 
+    animation-name: changeColorAfter;
+    animation-duration: 2s;   
+}
+
+.button_gradient:hover {
+    cursor: pointer;
+    animation-name: changeColor;
+    animation-duration: 2s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes changeColor {
+    0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
+@keyframes changeColorAfter {
+0% {
+    background-position: 100% 50%;
+}
+100% {
+    background-position: 0% 50%;
+}
+}

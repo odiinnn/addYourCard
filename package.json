@@ -14,6 +14,9 @@
     },
     "dependencies": {
         "@apollo/client": "^3.5.10",
+        "@emotion/react": "^11.9.3",
+        "@emotion/styled": "^11.9.3",
+        "@mui/material": "^5.8.5",
         "@prisma/client": "^3.15.2",
         "apollo-server-micro": "^3.6.7",
         "apollo3-cache-persist": "^0.14.0",
@@ -26,7 +29,8 @@
         "next-compose-plugins": "^2.2.1",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
-        "sharp": "^0.30.4"
+        "sharp": "^0.30.4",
+        "zustand": "^4.0.0-rc.1"
     },
     "devDependencies": {
         "@graphql-codegen/add": "^3.1.1",

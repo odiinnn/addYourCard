@@ -1,3 +1,6 @@
+![](./.github/logo.png)
+
+
 Next.js + GraphQL + Typescript frontend credit card app.
 
 # Get started
